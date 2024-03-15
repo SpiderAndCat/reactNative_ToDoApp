@@ -4,11 +4,15 @@ import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
+
       <View style={styles.inputContainer}>
         <TextInput style={styles.textInput} placeholder='What do you need to do?'></TextInput>
-        <Button style={styles.addButton}title='Add Task'/>
+        <View style={styles.addButton}>
+          <Button title='Add Task'/>
+        </View>
       </View>
-      <View>
+
+      <View style={styles.tasksContainer}>
         <Text>List of goals...</Text>
       </View>
 
@@ -22,18 +26,30 @@ const styles = StyleSheet.create({
     flex: 1
   },
   inputContainer: {
+    flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    paddingBottom: 16,
+    paddingTop: 8,
+    marginBottom: 16,
+    borderBottomWidth: 1,
+    maxHeight: 55
   },
   textInput: {
     marginRight: 16,
     padding: 8,
     borderWidth: 1,
     borderColor: 'blue',
-    width: '80%'
-
+    width: '80%',
+    height: '100%'
   },
   addButton: {
-    alignItems: 'center'
+    alignItems: 'center',
+    height: '100vh'
+  },
+  tasksContainer: {
+    flex: 5,
+    padding: 16,
+    backgroundColor: 'gray'
   }
 });
