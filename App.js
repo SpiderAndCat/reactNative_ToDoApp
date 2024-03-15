@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button,ScrollView } from 'react-native';
 //import { Button } from 'react-native-web';
 
 export default function App() {
@@ -27,11 +27,13 @@ export default function App() {
       </View>
 
       <View style={styles.tasksContainer}>
-        {tasks.map((t) => 
+        <ScrollView>
+          {tasks.map((t) => 
           <View key={t} style={styles.taskItem}>
             <Text style={styles.taskItemText}>{t}</Text>
           </View>
-        )}
+        )}`
+        </ScrollView>
       </View>
 
     </View>
