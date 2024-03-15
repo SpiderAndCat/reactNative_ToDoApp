@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { StyleSheet, Text, View, TextInput, Button,ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, ScrollView, FlatList } from 'react-native';
 //import { Button } from 'react-native-web';
 
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
 
   function addTaskHandler() {
     console.log('Task: ')
-    setTasks(t => [...t, enteredToDoTask]);
+    setTasks(t => [...t, {text: enteredToDoTask, key: Math.random.toString() }]);
   }
 
   return (
@@ -27,13 +27,18 @@ export default function App() {
       </View>
 
       <View style={styles.tasksContainer}>
-        <ScrollView>
-          {tasks.map((t) => 
-          <View key={t} style={styles.taskItem}>
-            <Text style={styles.taskItemText}>{t}</Text>
-          </View>
-        )}`
-        </ScrollView>
+        <FlatList 
+          data={tasks} 
+          renderItem={ (itemData) => {
+
+            return (
+              <View style={styles.taskItem}>
+                <Text style={styles.taskItemText}>{itemData.item.text}</Text>
+              </View>
+            );
+          }}
+        />
+          
       </View>
 
     </View>
