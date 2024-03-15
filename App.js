@@ -27,7 +27,11 @@ export default function App() {
       </View>
 
       <View style={styles.tasksContainer}>
-        {tasks.map((t) => <Text>{t}</Text>)}
+        {tasks.map((t) => 
+          <View key={t} style={styles.taskItem}>
+            <Text style={styles.taskItemText}>{t}</Text>
+          </View>
+        )}
       </View>
 
     </View>
@@ -65,5 +69,18 @@ const styles = StyleSheet.create({
     flex: 5,
     padding: 16,
     backgroundColor: 'gray'
-  }
+  },
+
+  taskItem: {
+    borderRadius: 10,
+    backgroundColor: 'purple',
+    padding: 5,
+    paddingLeft: 15,
+    paddingRight: 15,
+    margin: 2,
+    color: 'white'
+  },
+  taskItemText: {
+    color: 'white'
+  },
 });
