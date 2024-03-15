@@ -13,7 +13,7 @@ export default function App() {
 
   function addTaskHandler() {
     console.log('Task: ')
-    setTasks(t => [...t, {text: enteredToDoTask, key: Math.random.toString() }]);
+    setTasks(t => [...t, {text: enteredToDoTask, id: Math.random.toString() }]);
   }
 
   return (
@@ -36,6 +36,9 @@ export default function App() {
                 <Text style={styles.taskItemText}>{itemData.item.text}</Text>
               </View>
             );
+          }}
+          keyExtractor={(item, index) => {
+            return item.id
           }}
         />
           
