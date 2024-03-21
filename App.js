@@ -31,18 +31,19 @@ export default function App() {
     <>
       <StatusBar style='light'/>
       <View style={styles.container}>
+      <Text style={styles.title}>My React NativeToDo App</Text>
 
-        <View style={styles.start}>
-          <Text style={styles.title}>My React Native ToDo App</Text>
+        <View style={styles.startContainer}>
+        <Text style={styles.header}>My Tasks</Text>
+
           <View style={styles.button}>
-            <Button onPress={startAddTaskHandler} title='Add New Task' color='none'/>
+            <Button onPress={startAddTaskHandler} title=' Add +' color='none'/>
           </View>
         </View>
         
         
         <TaskInput visible={modalIsVisible} onAddTask={addTaskHandler} onCancel={endAddTaskHandler}/>
 
-        <Text style={styles.header}>My Tasks</Text>
 
         <View style={styles.tasksContainer}>
           <FlatList 
@@ -69,40 +70,48 @@ const styles = StyleSheet.create({
     padding: 50,
     flex: 1
   },
-  start: {
-    flex: 1,
-    flexDirection: 'row'
-  },
+  
   title: {
     fontWeight: 900,
     fontSize: '1em',
     marginBottom: 8,
     color: "white",
-    flex: 3
   },
+
+  startContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 0,
+
+  },
+
   header: {
+    flex: 3,
     fontWeight: 600,
-    fontSize: '1em',
+    fontSize: '0.8em',
     paddingHorizontal: 12,
-    paddingVertical: 6,
-    marginBottom: 4,
+    paddingVertical: 8,
     color: "white",
     backgroundColor: "#EE9400",
-    borderRadius: 12
-
-
+    borderRadius: 12,
   },
+
+  button: {
+    flex: 1,
+    backgroundColor:"#4488FF",
+    borderRadius: 25,
+    marginLeft: 16
+  },
+  
   tasksContainer: {
     flex: 5,
     padding: 16,
+    marginTop: 0,
     backgroundColor: '#EE9400',
     borderRadius: 12
 
-  },
-  button: {
-    backgroundColor:"#4488FF",
-    marginBottom: 16,
-    borderRadius: 25
   }
 });
 
