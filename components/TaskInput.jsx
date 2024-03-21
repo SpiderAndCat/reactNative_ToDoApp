@@ -43,16 +43,17 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginBottom: 16,
-        borderBottomWidth: 1,
-        padding: 16
+        padding: 16,
+        backgroundColor: '#4169E1'
     },
       textInput: {
         maxHeight: 55,
         width: '80%',
-
+        color: 'white',
         padding: 8,
         borderWidth: 1,
-        borderColor: 'blue',
+        borderColor: 'white',
+        backgroundColor: '#EE9400',
         height: '100%'
       },
       buttonContainer: {
@@ -63,3 +64,10 @@ const styles = StyleSheet.create({
         marginHorizontal: 4
       },
   });
+
+  /*
+#4169E1
+#FF6B35
+
+'#EE9400'
+*/
