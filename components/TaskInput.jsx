@@ -16,7 +16,7 @@ function TaskInput(props) {
 
     return (
         <View style={styles.inputContainer}>
-            <TextInput style={styles.textInput} placeholder='What do you need to do?' onChangeText={taskTextEnteredHandler}></TextInput>
+            <TextInput value={enteredToDoTask} style={styles.textInput} placeholder='What do you need to do?' onChangeText={taskTextEnteredHandler}></TextInput>
             <View style={styles.addButton}>
                 <Button onPress={addTaskHandler} title='Add Task'/>
             </View>
