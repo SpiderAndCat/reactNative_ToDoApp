@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { StyleSheet, View, FlatList } from 'react-native';
+import { StyleSheet, View, FlatList, Button } from 'react-native';
 //import { Button } from 'react-native-web';
 
 import TaskItem from './components/TaskItem';
@@ -9,6 +9,11 @@ import TaskInput from './components/TaskInput';
 export default function App() {
 
   const [tasks, setTasks] = useState([]);
+  const [modalIsVisible, setModalIsVisible] = useState(false);
+
+  function startAddTaskHandler() {
+    setModalIsVisible(true);
+  }
 
   function addTaskHandler(enteredToDoTask) {
     console.log('Task: ')
@@ -17,8 +22,9 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-
-      <TaskInput onAddTask={addTaskHandler}/>
+      <Button onPress={startAddTaskHandler} title='Add New Task' color="orange"/>
+      
+      <TaskInput visible={modalIsVisible} onAddTask={addTaskHandler}/>
 
       <View style={styles.tasksContainer}>
         <FlatList 

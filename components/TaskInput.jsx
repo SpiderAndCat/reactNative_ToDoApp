@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { StyleSheet, View, TextInput, Button } from 'react-native';
+import { Modal, StyleSheet, View, TextInput, Button } from 'react-native';
 
 function TaskInput(props) {
     const [enteredToDoTask, setEnteredToDoTask] = useState('');
@@ -15,12 +15,14 @@ function TaskInput(props) {
     }
 
     return (
-        <View style={styles.inputContainer}>
-            <TextInput value={enteredToDoTask} style={styles.textInput} placeholder='What do you need to do?' onChangeText={taskTextEnteredHandler}></TextInput>
-            <View style={styles.addButton}>
-                <Button onPress={addTaskHandler} title='Add Task'/>
+        <Modal visible={props.visible} animationType='slide'>
+            <View style={styles.inputContainer}>
+                <TextInput value={enteredToDoTask} style={styles.textInput} placeholder='What do you need to do?' onChangeText={taskTextEnteredHandler}></TextInput>
+                <View style={styles.addButton}>
+                    <Button onPress={addTaskHandler} title='Add Task'/>
+                </View>
             </View>
-        </View>
+        </Modal>
     );
 };
 
