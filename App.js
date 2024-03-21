@@ -15,16 +15,22 @@ export default function App() {
     setModalIsVisible(true);
   }
 
+  function endAddTaskHandler() {
+    setModalIsVisible(false);
+  }
+
   function addTaskHandler(enteredToDoTask) {
     console.log('Task: ')
     setTasks(t => [...t, {text: enteredToDoTask, id: Math.random.toString() }]);
+   endAddTaskHandler();
+  
   }
 
   return (
     <View style={styles.container}>
       <Button onPress={startAddTaskHandler} title='Add New Task' color="orange"/>
       
-      <TaskInput visible={modalIsVisible} onAddTask={addTaskHandler}/>
+      <TaskInput visible={modalIsVisible} onAddTask={addTaskHandler} onCancel={endAddTaskHandler}/>
 
       <View style={styles.tasksContainer}>
         <FlatList 

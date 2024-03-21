@@ -25,7 +25,7 @@ function TaskInput(props) {
                         <Button onPress={addTaskHandler} title='Add Task'/>
                     </View>
                     <View style={styles.buttonView}>
-                        <Button title='Cancel'/>
+                        <Button title='Cancel' onPress={props.onCancel}/>
                     </View>
 
                 </View>
