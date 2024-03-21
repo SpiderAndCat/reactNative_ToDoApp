@@ -21,11 +21,11 @@ function TaskInput(props) {
             <View style={styles.inputContainer}>
                 <TextInput value={enteredToDoTask} style={styles.textInput} placeholder='What do you need to do?' onChangeText={taskTextEnteredHandler}></TextInput>
                 <View style={styles.buttonContainer}>
-                    <View style={styles.buttonView}>
-                        <Button onPress={addTaskHandler} title='Add Task'/>
+                    <View style={styles.buttonViewAdd}>
+                        <Button onPress={addTaskHandler} title='Add Task' color='none'/>
                     </View>
-                    <View style={styles.buttonView}>
-                        <Button title='Cancel' onPress={props.onCancel}/>
+                    <View style={styles.buttonViewCancel}>
+                        <Button title='Cancel' onPress={props.onCancel} color='none'/>
                     </View>
 
                 </View>
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         marginBottom: 16,
         padding: 16,
-        backgroundColor: '#4169E1'
+        backgroundColor: '#4488FF'
     },
       textInput: {
         maxHeight: 55,
@@ -53,15 +53,28 @@ const styles = StyleSheet.create({
         padding: 8,
         borderWidth: 1,
         borderColor: 'white',
-        backgroundColor: '#EE9400',
+        backgroundColor: '#FFA500',
         height: '100%'
       },
       buttonContainer: {
         flexDirection: 'row',
         margin: 8
       },
-      buttonView: {
-        marginHorizontal: 4
+      buttonViewAdd: {
+        marginHorizontal: 4,
+        paddingHorizontal: 8,
+    
+        backgroundColor:"#FFA500",
+        borderRadius: 25,
+     
+      },
+      buttonViewCancel: {
+        marginHorizontal: 4,
+        paddingHorizontal: 8,
+    
+        backgroundColor:"#3366DD",
+        borderRadius: 25,
+     
       },
   });
 
