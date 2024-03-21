@@ -14,12 +14,12 @@ export default TaskItem;
 const styles = StyleSheet.create({
     taskItem: {
       borderRadius: 10,
-      backgroundColor: 'purple',
+      backgroundColor: '#4488FF',
       padding: 5,
       paddingLeft: 15,
       paddingRight: 15,
       margin: 2,
-      color: 'white'
+      color:'white'
     },
     taskItemText: {
       color: 'white'
