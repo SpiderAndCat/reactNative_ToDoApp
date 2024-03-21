@@ -7,6 +7,8 @@ This app is **ready to run on mobile**, via Expo Go, for iOS or Android (with a 
 
 https://github.com/SpiderAndCat/reactNative_ToDoApp/assets/130514366/d269635a-2774-48d0-b422-288eec209f04
 
+I made this app to demonstrate my understanding of foundational React Native design principles. 
+
 ## Features included:
 - Designed with **React Native** and **Expo**
 - `Modal` screen with `slide` animation
