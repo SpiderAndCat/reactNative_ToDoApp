@@ -1,5 +1,5 @@
 # reactNative_ToDoApp
-This repo showcases a basic React Native "To Do List" application.
+This repo showcases a basic React Native "To Do List" application that I created.
 
 See below for a video of the app flow in-use (in-browser, with mobile screen dimensions).
 
