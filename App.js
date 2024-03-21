@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import { StyleSheet, View, FlatList, Button } from 'react-native';
 //import { Button } from 'react-native-web';
+import { StatusBar } from 'expo-status-bar';
 
 import TaskItem from './components/TaskItem';
 import TaskInput from './components/TaskInput';
@@ -27,26 +28,29 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <Button onPress={startAddTaskHandler} title='Add New Task' color="orange"/>
-      
-      <TaskInput visible={modalIsVisible} onAddTask={addTaskHandler} onCancel={endAddTaskHandler}/>
+    <>
+      <StatusBar style='light'/>
+      <View style={styles.container}>
+        <Button onPress={startAddTaskHandler} title='Add New Task' color="orange"/>
+        
+        <TaskInput visible={modalIsVisible} onAddTask={addTaskHandler} onCancel={endAddTaskHandler}/>
 
-      <View style={styles.tasksContainer}>
-        <FlatList 
-          data={tasks} 
-          renderItem={ (itemData) => {
+        <View style={styles.tasksContainer}>
+          <FlatList 
+            data={tasks} 
+            renderItem={ (itemData) => {
 
-            return <TaskItem text={itemData.item.text} />;
-          }}
-          keyExtractor={(item, index) => {
-            return item.id
-          }}
-        />
-          
+              return <TaskItem text={itemData.item.text} />;
+            }}
+            keyExtractor={(item, index) => {
+              return item.id
+            }}
+          />
+            
+        </View>
+
       </View>
-
-    </View>
+    </>
   );
 }
 
