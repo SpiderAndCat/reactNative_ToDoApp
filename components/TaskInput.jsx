@@ -14,12 +14,20 @@ function TaskInput(props) {
 
     }
 
+
+
     return (
         <Modal visible={props.visible} animationType='slide'>
             <View style={styles.inputContainer}>
                 <TextInput value={enteredToDoTask} style={styles.textInput} placeholder='What do you need to do?' onChangeText={taskTextEnteredHandler}></TextInput>
-                <View style={styles.addButton}>
-                    <Button onPress={addTaskHandler} title='Add Task'/>
+                <View style={styles.buttonContainer}>
+                    <View style={styles.buttonView}>
+                        <Button onPress={addTaskHandler} title='Add Task'/>
+                    </View>
+                    <View style={styles.buttonView}>
+                        <Button title='Cancel'/>
+                    </View>
+
                 </View>
             </View>
         </Modal>
@@ -32,24 +40,26 @@ export default TaskInput;
 const styles = StyleSheet.create({
     inputContainer: {
         flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        paddingBottom: 16,
-        paddingTop: 8,
+        alignItems: 'center',
+        justifyContent: 'center',
         marginBottom: 16,
         borderBottomWidth: 1,
-        maxHeight: 55
-      },
+        padding: 16
+    },
       textInput: {
-        marginRight: 16,
+        maxHeight: 55,
+        width: '80%',
+
         padding: 8,
         borderWidth: 1,
         borderColor: 'blue',
-        width: '80%',
         height: '100%'
       },
-      addButton: {
-        alignItems: 'center',
-        height: '100vh'
+      buttonContainer: {
+        flexDirection: 'row',
+        margin: 8
+      },
+      buttonView: {
+        marginHorizontal: 4
       },
   });
